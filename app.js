@@ -1,11 +1,8 @@
 const express = require('express');
-
 const app = express();
 
-app.use((req, res, next) => {
-    res.status(200).send({
-        mensagem: 'OK!'
-    });
-});
+const routeFilms = require('./routes/films');
+
+app.use('/films', routeFilms);
 
 module.exports = app;
